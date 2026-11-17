@@ -1,125 +1,130 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>کلاس قرآن | سامانه هوشمند کلاس</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>کلاس قرآن</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
-:root{--bg:#071d18;--panel:#102e27;--green:#16a56d;--mint:#dff7e9;--gold:#e2b75e;--text:#eef8f2;--muted:#9fb8ad;--danger:#e56b6f}
-*{box-sizing:border-box}body{margin:0;font-family:Vazirmatn,Tahoma,sans-serif;background:#f3f7f5;color:#15362c}
-.hidden{display:none!important}.login-page{min-height:100vh;background:radial-gradient(circle at 20% 20%,#176c4f,transparent 32%),radial-gradient(circle at 80% 80%,#123f34,transparent 35%),var(--bg);display:grid;place-items:center;padding:22px}
-.login-card{width:min(940px,100%);display:grid;grid-template-columns:1.15fr .85fr;background:#ffffff12;border:1px solid #ffffff25;border-radius:30px;overflow:hidden;box-shadow:0 30px 100px #0007;backdrop-filter:blur(14px)}
-.intro{padding:55px;color:var(--text);background:linear-gradient(145deg,#0f5e45cc,#071d18bb)}.intro .moon{font-size:70px}.intro h1{font-size:45px;margin:15px 0}.intro p{line-height:2;color:#d2e7dc}.details{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.tag{padding:10px 14px;border-radius:99px;background:#ffffff14;border:1px solid #ffffff1c}
-.login-box{padding:45px;background:#fff;color:#17382e}.login-box h2{margin-top:0}.login-box p{color:#698076}.roles{display:flex;gap:10px;margin:22px 0}.role{flex:1;border:1px solid #dce8e1;background:#fff;border-radius:14px;padding:12px;font-family:inherit;cursor:pointer}.role.active{background:#e7f7ee;color:#087447;border-color:#8ed2ae;font-weight:800}label{font-size:13px;font-weight:700}select,input,textarea{width:100%;margin-top:7px;border:1px solid #dbe6df;border-radius:13px;padding:13px;font:inherit;background:#fff}.login-btn,.primary{width:100%;border:0;border-radius:13px;padding:14px;background:linear-gradient(135deg,#0c7b51,#17ad70);color:white;font:inherit;font-weight:800;cursor:pointer;margin-top:18px}.hint{font-size:12px;color:#83968d;margin-top:16px;line-height:1.8}
-.app{min-height:100vh;background:#f3f7f5}.topbar{background:linear-gradient(120deg,#082a21,#105b43);color:white;padding:15px 5%;display:flex;justify-content:space-between;align-items:center;gap:15px;position:sticky;top:0;z-index:10}.brand{font-size:20px;font-weight:800}.user-pill{display:flex;align-items:center;gap:12px}.avatar{width:38px;height:38px;border-radius:50%;background:#ffffff20;display:grid;place-items:center}.logout{border:1px solid #ffffff35;background:transparent;color:white;padding:8px 12px;border-radius:10px;font-family:inherit;cursor:pointer}
-.layout{display:grid;grid-template-columns:240px 1fr;min-height:calc(100vh - 68px)}.side{background:#fff;border-left:1px solid #e5ece8;padding:22px}.side button{width:100%;border:0;background:transparent;text-align:right;padding:13px;border-radius:12px;font-family:inherit;cursor:pointer;margin-bottom:5px;color:#426057}.side button.active,.side button:hover{background:#eaf7f0;color:#087447;font-weight:800}.content{padding:32px 5%;max-width:1300px;width:100%;margin:auto}.welcome{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:25px}.welcome h1{margin:0;color:#123a2f}.welcome p{color:#71877d}.schedule{background:#fff8e8;border:1px solid #f2dfaa;color:#73561d;border-radius:16px;padding:15px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:white;border:1px solid #e5ece8;border-radius:22px;padding:22px;box-shadow:0 12px 35px #143b2b0a}.card h3{margin-top:0}.number{font-size:32px;font-weight:800;color:#087447}.muted{color:#71877d;font-size:13px}.attendance-status{padding:18px;border-radius:16px;background:#eef8f2;margin-top:12px}.status{display:inline-block;padding:6px 11px;border-radius:99px;font-size:12px;font-weight:800}.present{background:#dff7e9;color:#087447}.absent{background:#ffe8e8;color:#b23b42}.none{background:#edf1ef;color:#65766e}.attendance-actions{display:flex;gap:10px;margin-top:14px}.attendance-actions button{flex:1;border:0;border-radius:12px;padding:12px;font-family:inherit;font-weight:700;cursor:pointer}.yes{background:#dff7e9;color:#087447}.no{background:#ffe6e6;color:#b23b42}.list{display:grid;gap:10px}.row{display:flex;align-items:center;justify-content:space-between;padding:14px;border:1px solid #e7eeea;border-radius:15px;background:#fbfdfc}.row small{color:#7d9188}.row .buttons{display:flex;gap:7px}.mini{border:0;border-radius:9px;padding:8px 10px;font-family:inherit;cursor:pointer}.mini.y{background:#dff7e9;color:#087447}.mini.n{background:#ffe8e8;color:#b23b42}
-.section{display:none}.section.active{display:block}.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}.activity{border-right:4px solid var(--gold);background:#fffaf0;padding:16px;border-radius:12px;line-height:2}.filebox{border:2px dashed #bcd8c9;border-radius:16px;padding:22px;text-align:center;background:#fbfdfc}.save{width:auto;padding:12px 20px}.file-list{margin-top:10px;font-size:13px;color:#60786d}
-@media(max-width:800px){.login-card{grid-template-columns:1fr}.intro{padding:35px}.login-box{padding:28px}.layout{grid-template-columns:1fr}.side{display:flex;overflow:auto;padding:10px;gap:5px}.side button{white-space:nowrap;width:auto;margin:0}.grid,.two{grid-template-columns:1fr}.content{padding:22px 5%}.welcome{flex-direction:column;align-items:flex-start}.topbar{padding:12px 5%}}
+*{box-sizing:border-box}
+body{
+ margin:0;padding:25px 15px;min-height:100vh;
+ display:flex;align-items:center;justify-content:center;
+ font-family:Tahoma,sans-serif;background:#f1f5f0;color:#263b30
+}
+main{width:100%;max-width:460px;text-align:center}
+header{background:#123f31;color:white;padding:30px 20px;border-radius:20px 20px 0 0}
+.moon{font-size:36px;color:#d5ad55}
+h1{margin:10px 0;font-size:28px}
+.desc{font-size:13px;line-height:2;color:#e1eae3}
+.schedule{display:inline-block;margin-top:15px;padding:10px 15px;border:1px solid #d5ad55;border-radius:30px;color:#f1d995;font-size:12px}
+.card{background:#fffdf8;padding:25px 22px;border-radius:0 0 20px 20px;box-shadow:0 12px 35px #123f3115}
+h2{font-size:19px;color:#123f31}
+.hint{font-size:12px;color:#718078}
+.roles{display:flex;gap:8px;margin:20px 0}
+.role{flex:1;padding:12px 3px;border:1px solid #dce5dc;border-radius:10px;background:#f8faf6;color:#456052;font-family:inherit;cursor:pointer}
+.role span{display:block;font-size:20px;margin-bottom:5px}
+.role.active{border:2px solid #d5ad55;background:#fbf5e6}
+label{display:block;text-align:right;font-size:12px;margin:13px 0 7px}
+input{width:100%;height:46px;padding:10px;border:1px solid #dce3db;border-radius:9px;font-family:inherit;font-size:13px}
+.submit,.attendance{
+ width:100%;margin-top:18px;padding:14px;border:0;border-radius:10px;
+ background:#123f31;color:white;font-family:inherit;font-size:14px;cursor:pointer
+}
+.attendance{background:#1c704d}
+.attendance:disabled{background:#8b9b91;cursor:not-allowed}
+.panel{display:none}
+.notice{font-size:12px;color:#98702a;line-height:2}
+footer{font-size:11px;color:#89958c;margin-top:15px}
 </style>
 </head>
 <body>
+<main>
+<header>
+ <div class="moon">☪</div>
+ <h1>کلاس قرآن</h1>
+ <p class="desc">سامانه مدرن مدیریت کلاس، حضور و غیاب و دسترسی به فعالیت‌ها و مطالب آموزشی.</p>
+ <div class="schedule">چهارشنبه‌ها ۷ تا ۹ شب | کلاس قرآن</div>
+</header>
 
-<!-- LOGIN -->
-<section class="login-page" id="loginPage">
-  <div class="login-card">
-    <div class="intro">
-      <div class="moon">☪</div>
-      <h1>کلاس قرآن</h1>
-      <p>سامانه مدرن مدیریت کلاس، حضور و غیاب و دسترسی به فعالیت‌ها و مطالب آموزشی.</p>
-      <div class="details"><span class="tag">📅 چهارشنبه‌ها</span><span class="tag">🕖 ۷ تا ۹ شب</span><span class="tag">📖 کلاس قرآن</span></div>
-    </div>
-    <div class="login-box">
-      <h2>ورود به سامانه 👋</h2>
-      <p>نوع کاربری خود را انتخاب کنید.</p>
-      <div class="roles">
-        <button class="role active" onclick="setRole('student',this)">👨‍🎓 دانش‌آموز</button>
-        <button class="role" onclick="setRole('teacher',this)">👨‍🏫 مربی</button>
-      </div>
-      <label>نام کاربر</label>
-      <select id="userSelect"></select>
-      <button class="login-btn" onclick="login()">ورود به پنل</button>
-      <div class="hint">نسخه نمایشی: برای استفاده واقعی و آنلاین باید سیستم ورود و دیتابیس امن به آن متصل شود.</div>
-    </div>
-  </div>
+<section class="card" id="loginPanel">
+ <h2>ورود به سامانه 👋</h2>
+ <p class="hint">نوع کاربری خود را انتخاب کنید.</p>
+
+ <div class="roles">
+  <button class="role active" type="button" data-role="student"><span>👨‍🎓</span>دانش‌آموز</button>
+  <button class="role" type="button" data-role="teacher"><span>👨‍🏫</span>مربی</button>
+  <button class="role" type="button" data-role="admin"><span>🛡️</span>مدیر</button>
+ </div>
+
+ <form id="login">
+  <label for="username">نام کاربری</label>
+  <input id="username" required placeholder="نام کاربری خود را وارد کنید">
+  <label for="password">رمز عبور</label>
+  <input id="password" type="password" required placeholder="رمز عبور خود را وارد کنید">
+  <button class="submit" type="submit">ورود به پنل</button>
+  <p id="message" class="notice"></p>
+ </form>
 </section>
 
-<!-- APP -->
-<section class="app hidden" id="app">
-  <header class="topbar">
-    <div class="brand">☪ کلاس قرآن</div>
-    <div class="user-pill"><div class="avatar" id="avatar">👤</div><span id="userName"></span><button class="logout" onclick="logout()">خروج</button></div>
-  </header>
-  <div class="layout">
-    <aside class="side" id="sidebar"></aside>
-    <main class="content">
-      <!-- Dashboard -->
-      <section class="section active" id="dashboard"></section>
-      <!-- Attendance -->
-      <section class="section" id="attendance"></section>
-      <!-- Activities -->
-      <section class="section" id="activities"></section>
-      <!-- Info -->
-      <section class="section" id="info"></section>
-    </main>
-  </div>
+<section class="card panel" id="studentPanel">
+ <h2>پنل دانش‌آموز 👨‍🎓</h2>
+ <p id="welcome"></p>
+ <p class="hint">برای ثبت حضور خود در کلاس، دکمه زیر را بزن.</p>
+ <button class="attendance" id="attendanceButton">ثبت حضور من</button>
+ <p id="attendanceMessage" class="notice"></p>
+ <button class="submit" id="logout">خروج از حساب</button>
 </section>
+
+<footer>سامانه مدیریت کلاس قرآن</footer>
+</main>
 
 <script>
-const students=["محمد عرفان غریب ناصری","محمدطاها پل","محمد طاها فروزان فر","متین حاصلی","حامد قرینه","علیرضا جمال پور","محمدصادق مدنیان","متین حاصلی","محمد حسین رحمانی","سید علی احمد زاده","امیر مهدی جنتی پور"];
-const teachers=["آقای مصطفوی","آقای بهنیا","آقای فرامرز پور"];
-let role="student", currentUser=null;
-let data=JSON.parse(localStorage.getItem("quranClassData")||"{}");
-data.attendance=data.attendance||{}; data.activity=data.activity||""; data.files=data.files||[];
-function save(){localStorage.setItem("quranClassData",JSON.stringify(data))}
-function setRole(r,el){role=r;document.querySelectorAll(".role").forEach(x=>x.classList.remove("active"));el.classList.add("active");populateUsers()}
-function populateUsers(){const list=role==="student"?students:teachers;document.getElementById("userSelect").innerHTML=list.map(x=>`<option>${x}</option>`).join("")}
-populateUsers();
-function login(){currentUser=document.getElementById("userSelect").value;document.getElementById("loginPage").classList.add("hidden");document.getElementById("app").classList.remove("hidden");document.getElementById("userName").textContent=currentUser;document.getElementById("avatar").textContent=role==="teacher"?"👨‍🏫":"👨‍🎓";renderApp()}
-function logout(){document.getElementById("app").classList.add("hidden");document.getElementById("loginPage").classList.remove("hidden");currentUser=null}
-function navButton(id,label,icon){return `<button onclick="openSection('${id}',this)" class="${id==="dashboard"?"active":""}">${icon} ${label}</button>`}
-function renderApp(){
- const side=document.getElementById("sidebar");
- side.innerHTML=navButton("dashboard","داشبورد","🏠")+navButton("attendance","حضور و غیاب","✅")+navButton("activities","فعالیت‌های کلاس","📚")+navButton("info","اطلاعات کلاس","📍");
- renderDashboard();renderAttendance();renderActivities();renderInfo();
-}
-function openSection(id,btn){document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));document.getElementById(id).classList.add("active");document.querySelectorAll(".side button").forEach(b=>b.classList.remove("active"));btn.classList.add("active")}
-function status(name){return data.attendance[name]||"ثبت نشده"}
-function badge(s){let c=s==="حاضر"?"present":s==="غایب"?"absent":"none";return `<span class="status ${c}">${s}</span>`}
-function renderDashboard(){
- const el=document.getElementById("dashboard");
- if(role==="student"){
-  el.innerHTML=`<div class="welcome"><div><h1>سلام ${currentUser} 👋</h1><p>به پنل دانش‌آموزی کلاس قرآن خوش آمدی.</p></div><div class="schedule">📅 چهارشنبه‌ها | 🕖 ۷ تا ۹ شب</div></div>
-  <div class="grid"><div class="card"><h3>وضعیت امروز</h3><div class="attendance-status">${badge(status(currentUser))}<p class="muted">فقط می‌توانی حضور خودت را ثبت کنی.</p></div></div><div class="card"><h3>📚 فعالیت جلسه</h3><p>${data.activity||"هنوز گزارشی ثبت نشده است."}</p></div><div class="card"><h3>📁 فایل‌ها</h3><div class="number">${data.files.length}</div><p class="muted">فایل ثبت‌شده توسط مربی</p></div></div>`;
- }else{
-  const present=students.filter(s=>status(s)==="حاضر").length, absent=students.filter(s=>status(s)==="غایب").length;
-  el.innerHTML=`<div class="welcome"><div><h1>سلام ${currentUser} 👋</h1><p>پنل مدیریت کلاس قرآن</p></div><div class="schedule">📅 چهارشنبه‌ها | 🕖 ۷ تا ۹ شب</div></div>
-  <div class="grid"><div class="card"><h3>👨‍🎓 دانش‌آموزان</h3><div class="number">${students.length}</div></div><div class="card"><h3>✅ حاضر</h3><div class="number">${present}</div></div><div class="card"><h3>❌ غایب</h3><div class="number">${absent}</div></div></div>`;
+let selectedRole="student";
+
+document.querySelectorAll(".role").forEach(button=>{
+ button.addEventListener("click",()=>{
+  selectedRole=button.dataset.role;
+  document.querySelectorAll(".role").forEach(item=>{
+   item.classList.toggle("active",item===button);
+  });
+ });
+});
+
+document.getElementById("login").addEventListener("submit",event=>{
+ event.preventDefault();
+
+ const username=document.getElementById("username").value.trim();
+
+ if(selectedRole!=="student"){
+  document.getElementById("message").textContent=
+   "پنل این نقش هنوز آماده نشده است.";
+  return;
  }
-}
-function renderAttendance(){
- const el=document.getElementById("attendance");
- if(role==="student"){
-  el.innerHTML=`<div class="welcome"><div><h1>حضور و غیاب</h1><p>وضعیت حضور خودت را ثبت کن.</p></div></div>
-  <div class="card"><h3>${currentUser}</h3><div class="attendance-status">وضعیت فعلی: ${badge(status(currentUser))}</div><div class="attendance-actions"><button class="yes" onclick="markSelf('حاضر')">✓ من حاضرم</button><button class="no" onclick="markSelf('غایب')">✕ غایب هستم</button></div><p class="hint">برای امنیت، دانش‌آموزان امکان تغییر وضعیت دیگران را ندارند.</p></div>`;
- }else{
-  el.innerHTML=`<div class="welcome"><div><h1>مدیریت حضور و غیاب</h1><p>ثبت و مشاهده وضعیت همه دانش‌آموزان</p></div></div><div class="card"><div class="list">${students.map((s,i)=>`<div class="row"><div><b>${i+1}. ${s}</b><br><small>وضعیت: ${status(s)}</small></div><div class="buttons"><button class="mini y" onclick="mark('${s}','حاضر')">حاضر</button><button class="mini n" onclick="mark('${s}','غایب')">غایب</button></div></div>`).join("")}</div></div>`;
- }
-}
-function markSelf(v){data.attendance[currentUser]=v;save();renderDashboard();renderAttendance()}
-function mark(n,v){data.attendance[n]=v;save();renderDashboard();renderAttendance()}
-function renderActivities(){
- const el=document.getElementById("activities");
- if(role==="student"){
-  el.innerHTML=`<div class="welcome"><div><h1>فعالیت‌ها و مطالب کلاس</h1><p>مطالب ثبت‌شده توسط مربیان</p></div></div><div class="two"><div class="card"><h3>📝 گزارش جلسه</h3><div class="activity">${data.activity||"هنوز فعالیتی ثبت نشده است."}</div></div><div class="card"><h3>📁 فایل‌ها و تصاویر</h3>${data.files.length?`<div class="list">${data.files.map(f=>`<div class="row">📎 ${f}</div>`).join("")}</div>`:"<p class='muted'>هنوز فایلی آپلود نشده است.</p>"}</div></div>`;
- }else{
-  el.innerHTML=`<div class="welcome"><div><h1>مدیریت فعالیت‌های کلاس</h1><p>گزارش جلسه و فایل‌های آموزشی را اضافه کن.</p></div></div><div class="two"><div class="card"><h3>📝 گزارش جلسه</h3><textarea id="activityInput" rows="7" placeholder="فعالیت‌های انجام‌شده در کلاس...">${data.activity}</textarea><button class="primary save" onclick="saveActivity()">ذخیره گزارش</button></div><div class="card"><h3>📤 آپلود فایل</h3><div class="filebox"><input type="file" id="fileInput" multiple><button class="primary save" onclick="addFiles()">ثبت فایل‌ها</button><div class="file-list">${data.files.join("<br>")}</div></div></div></div>`;
- }
-}
-function saveActivity(){data.activity=document.getElementById("activityInput").value.trim();save();renderActivities();renderDashboard();alert("گزارش ذخیره شد.");}
-function addFiles(){let fs=[...document.getElementById("fileInput").files];data.files.push(...fs.map(f=>f.name));save();renderActivities();renderDashboard();alert("نام فایل‌ها ثبت شد. برای آپلود واقعی فایل روی اینترنت، نسخه آنلاین با فضای ذخیره‌سازی لازم است.");}
-function renderInfo(){document.getElementById("info").innerHTML=`<div class="welcome"><div><h1>اطلاعات کلاس</h1><p>جزئیات برگزاری کلاس قرآن</p></div></div><div class="grid"><div class="card"><h3>📅 زمان کلاس</h3><p><b>چهارشنبه‌ها</b></p><p>ساعت ۷ تا ۹ شب</p></div><div class="card"><h3>👨‍🏫 مربیان</h3>${teachers.map(t=>`<p>${t}</p>`).join("")}</div><div class="card"><h3>📍 محل کلاس</h3><p class="muted">محل برگزاری می‌تواند توسط مربیان در نسخه آنلاین مدیریت شود.</p></div></div>`}
+
+ document.getElementById("loginPanel").style.display="none";
+ document.getElementById("studentPanel").style.display="block";
+ document.getElementById("welcome").textContent=
+  "خوش آمدی، "+username+" عزیز!";
+});
+
+document.getElementById("attendanceButton").addEventListener("click",()=>{
+ const now=new Date();
+ document.getElementById("attendanceMessage").textContent=
+  "حضور نمایشی شما ثبت شد: "+now.toLocaleDateString("fa-IR")+" ساعت "+
+  now.toLocaleTimeString("fa-IR");
+ document.getElementById("attendanceButton").disabled=true;
+ document.getElementById("attendanceButton").textContent="حضور ثبت شد ✓";
+});
+
+document.getElementById("logout").addEventListener("click",()=>{
+ document.getElementById("studentPanel").style.display="none";
+ document.getElementById("loginPanel").style.display="block";
+ document.getElementById("attendanceButton").disabled=false;
+ document.getElementById("attendanceButton").textContent="ثبت حضور من";
+ document.getElementById("attendanceMessage").textContent="";
+ document.getElementById("login").reset();
+});
 </script>
 </body>
 </html>
