@@ -1,131 +1,95 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>کلاس قرآن</title>
 <style>
-*{box-sizing:border-box}
-body{
- margin:0;padding:25px 15px;min-height:100vh;
- display:flex;align-items:center;justify-content:center;
- font-family:Tahoma,sans-serif;background:#f1f5f0;color:#263b30
-}
-main{width:100%;max-width:460px;text-align:center}
-header{background:#123f31;color:white;padding:30px 20px;border-radius:20px 20px 0 0}
-.moon{font-size:36px;color:#d5ad55}
-h1{margin:10px 0;font-size:28px}
-.desc{font-size:13px;line-height:2;color:#e1eae3}
-.schedule{display:inline-block;margin-top:15px;padding:10px 15px;border:1px solid #d5ad55;border-radius:30px;color:#f1d995;font-size:12px}
-.card{background:#fffdf8;padding:25px 22px;border-radius:0 0 20px 20px;box-shadow:0 12px 35px #123f3115}
-h2{font-size:19px;color:#123f31}
-.hint{font-size:12px;color:#718078}
-.roles{display:flex;gap:8px;margin:20px 0}
-.role{flex:1;padding:12px 3px;border:1px solid #dce5dc;border-radius:10px;background:#f8faf6;color:#456052;font-family:inherit;cursor:pointer}
-.role span{display:block;font-size:20px;margin-bottom:5px}
-.role.active{border:2px solid #d5ad55;background:#fbf5e6}
-label{display:block;text-align:right;font-size:12px;margin:13px 0 7px}
-input{width:100%;height:46px;padding:10px;border:1px solid #dce3db;border-radius:9px;font-family:inherit;font-size:13px}
-.submit,.attendance{
- width:100%;margin-top:18px;padding:14px;border:0;border-radius:10px;
- background:#123f31;color:white;font-family:inherit;font-size:14px;cursor:pointer
-}
-.attendance{background:#1c704d}
-.attendance:disabled{background:#8b9b91;cursor:not-allowed}
-.panel{display:none}
-.notice{font-size:12px;color:#98702a;line-height:2}
-footer{font-size:11px;color:#89958c;margin-top:15px}
+*{box-sizing:border-box}body{margin:0;padding:22px 14px;min-height:100vh;background:#f1f5f0;color:#263b30;font-family:Tahoma,sans-serif}
+main{max-width:850px;margin:auto}header{background:#123f31;color:white;text-align:center;padding:28px 18px;border-radius:20px 20px 0 0}
+.moon{font-size:34px;color:#d5ad55}h1{margin:8px 0;font-size:27px}.desc{font-size:13px;line-height:2;color:#e1eae3}.schedule{display:inline-block;margin-top:8px;padding:9px 14px;border:1px solid #d5ad55;border-radius:30px;color:#f1d995;font-size:12px}
+.card{background:#fffdf8;padding:22px;border-radius:0 0 20px 20px;box-shadow:0 12px 35px #123f3115}.hidden{display:none!important}
+h2{font-size:19px;color:#123f31;margin-top:4px}.hint,.muted{font-size:12px;color:#718078;line-height:2}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.roles{display:flex;gap:8px;margin:18px 0}.role{flex:1;padding:12px 3px;border:1px solid #dce5dc;border-radius:10px;background:#f8faf6;color:#456052;font-family:inherit;cursor:pointer}.role span{display:block;font-size:20px;margin-bottom:5px}.role.active{border:2px solid #d5ad55;background:#fbf5e6}
+label{display:block;text-align:right;font-size:12px;margin:12px 0 6px}input,select,textarea{width:100%;padding:12px;border:1px solid #dce3db;border-radius:9px;font-family:inherit;font-size:13px;background:white}textarea{min-height:80px}
+button{border:0;border-radius:10px;padding:12px 15px;background:#123f31;color:white;font-family:inherit;cursor:pointer;font-size:13px}.secondary{background:#e9eee8;color:#234536}.gold{background:#9a742b}.danger{background:#8b3c34}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.actions button{flex:1}
+.notice{font-size:12px;line-height:2;color:#98702a;white-space:pre-wrap}.success{color:#1c704d}.error{color:#a33c32}
+.panelhead{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.item{border:1px solid #e2e9e1;border-radius:12px;padding:13px;margin:10px 0;background:#fff}.item h3{font-size:14px;margin:0 0 8px}.item p{font-size:12px;line-height:1.9;margin:5px 0}.small{font-size:11px;color:#7c887f}footer{text-align:center;font-size:11px;color:#89958c;margin:16px}
 </style>
 </head>
-<body>
-<main>
-<header>
- <div class="moon">☪</div>
- <h1>کلاس قرآن</h1>
- <p class="desc">سامانه مدرن مدیریت کلاس، حضور و غیاب و دسترسی به فعالیت‌ها و مطالب آموزشی.</p>
- <div class="schedule">چهارشنبه‌ها ۷ تا ۹ شب | کلاس قرآن</div>
-</header>
-
+<body><main>
+<header><div class="moon">☪</div><h1>کلاس قرآن</h1><p class="desc">سامانه مدیریت کلاس، حضور و غیاب و دسترسی به فعالیت‌ها و مطالب آموزشی.</p><div class="schedule">چهارشنبه‌ها ۷ تا ۹ شب | کلاس قرآن</div></header>
 <section class="card" id="loginPanel">
- <h2>ورود به سامانه 👋</h2>
- <p class="hint">نوع کاربری خود را انتخاب کنید.</p>
-
- <div class="roles">
-  <button class="role active" type="button" data-role="student"><span>👨‍🎓</span>دانش‌آموز</button>
-  <button class="role" type="button" data-role="teacher"><span>👨‍🏫</span>مربی</button>
-  <button class="role" type="button" data-role="admin"><span>🛡️</span>مدیر</button>
- </div>
-
- <form id="login">
-  <label for="username">نام کاربری</label>
-  <input id="username" required placeholder="نام کاربری خود را وارد کنید">
-  <label for="password">رمز عبور</label>
-  <input id="password" type="password" required placeholder="رمز عبور خود را وارد کنید">
-  <button class="submit" type="submit">ورود به پنل</button>
-  <p id="message" class="notice"></p>
- </form>
+<h2>ورود به سامانه 👋</h2><p class="hint">نوع حساب خود را انتخاب کنید.</p>
+<div class="roles">
+<button class="role active" data-role="student"><span>👨‍🎓</span>دانش‌آموز</button>
+<button class="role" data-role="teacher"><span>👨‍🏫</span>مربی</button>
+<button class="role" data-role="admin"><span>🛡️</span>مدیر</button>
+</div>
+<form id="loginForm"><label>نام کاربری</label><input id="username" autocomplete="username" required maxlength="24" placeholder="نام کاربری">
+<label>رمز عبور</label><input id="password" type="password" autocomplete="current-password" required>
+<button style="width:100%;margin-top:16px" type="submit">ورود امن</button></form>
+<p id="loginMessage" class="notice"></p>
+<details style="margin-top:18px"><summary class="hint">راه‌اندازی مدیر اولیه (فقط یک بار)</summary>
+<p class="hint">اگر هنوز مدیر ساخته نشده، اطلاعات مدیر و کد راه‌اندازی که در Firebase تنظیم شده را وارد کنید.</p>
+<form id="bootstrapForm">
+<label>نام نمایشی مدیر</label><input id="bootName" required>
+<label>نام کاربری مدیر</label><input id="bootUser" required maxlength="24">
+<label>رمز عبور (حداقل ۸ نویسه)</label><input id="bootPass" type="password" required minlength="8">
+<label>کد راه‌اندازی Firebase</label><input id="bootCode" type="password" required>
+<button class="gold" style="width:100%;margin-top:12px">ساخت مدیر اولیه</button>
+</form><p id="bootMessage" class="notice"></p></details>
 </section>
-
-<section class="card panel" id="studentPanel">
- <h2>پنل دانش‌آموز 👨‍🎓</h2>
- <p id="welcome"></p>
- <p class="hint">برای ثبت حضور خود در کلاس، دکمه زیر را بزن.</p>
- <button class="attendance" id="attendanceButton">ثبت حضور من</button>
- <p id="attendanceMessage" class="notice"></p>
- <button class="submit" id="logout">خروج از حساب</button>
-</section>
-
-<footer>سامانه مدیریت کلاس قرآن</footer>
-</main>
-
+<section class="card hidden" id="appPanel">
+<div class="panelhead"><div><h2 id="panelTitle">پنل</h2><p id="welcome" class="hint"></p></div><button class="secondary" id="logout">خروج از حساب</button></div>
+<div id="adminArea" class="hidden">
+<h3>ساخت حساب جدید</h3><form id="createAccount" class="grid">
+<div><label>نام نمایشی</label><input id="newName" required></div>
+<div><label>نام کاربری (حروف انگلیسی و عدد)</label><input id="newUser" required pattern="[a-zA-Z0-9_]{3,24}"></div>
+<div><label>رمز عبور (حداقل ۸ نویسه)</label><input id="newPass" type="password" required minlength="8"></div>
+<div><label>نقش</label><select id="newRole"><option value="student">دانش‌آموز</option><option value="teacher">مربی</option></select></div>
+<button style="grid-column:1/-1">ساخت حساب</button></form><p id="createMessage" class="notice"></p>
+</div>
+<div id="studentArea" class="hidden">
+<h3>حضور و غیاب</h3><p class="hint">برای هر روز فقط یک بار امکان ثبت حضور وجود دارد.</p><button id="attendanceBtn">ثبت حضور امروز</button><p id="attendanceMessage" class="notice"></p>
+</div>
+<div id="teacherArea" class="hidden">
+<h3>ثبت تکلیف یا اطلاعیه</h3><form id="assignmentForm"><label>عنوان</label><input id="assignmentTitle" required><label>توضیحات</label><textarea id="assignmentText" required></textarea><button style="margin-top:12px">انتشار برای دانش‌آموزان</button></form><p id="assignmentMessage" class="notice"></p>
+<h3 style="margin-top:24px">گزارش حضورها</h3><button id="refreshAttendance" class="secondary">به‌روزرسانی گزارش</button><div id="attendanceList"></div>
+</div>
+<div id="sharedArea">
+<h3 style="margin-top:24px">تکالیف و اطلاعیه‌ها</h3><div id="assignmentList" class="muted">در حال دریافت...</div>
+<h3 style="margin-top:24px">مطالب آموزشی</h3>
+<div id="uploadArea" class="hidden"><form id="uploadForm"><label>عنوان فایل</label><input id="fileTitle" required><label>انتخاب PDF، تصویر، صوت یا ویدئو (حداکثر ۱۰۰ مگابایت)</label><input id="materialFile" type="file" accept="application/pdf,image/*,audio/*,video/*" required><button style="margin-top:12px">بارگذاری مطلب</button></form><p id="uploadMessage" class="notice"></p></div>
+<div id="materialList" class="muted">در حال دریافت...</div>
+</div>
+</section><footer>سامانه مدیریت کلاس قرآن</footer></main>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-functions-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
 <script>
-let selectedRole="student";
-
-document.querySelectorAll(".role").forEach(button=>{
- button.addEventListener("click",()=>{
-  selectedRole=button.dataset.role;
-  document.querySelectorAll(".role").forEach(item=>{
-   item.classList.toggle("active",item===button);
-  });
- });
-});
-
-document.getElementById("login").addEventListener("submit",event=>{
- event.preventDefault();
-
- const username=document.getElementById("username").value.trim();
-
- if(selectedRole!=="student"){
-  document.getElementById("message").textContent=
-   "پنل این نقش هنوز آماده نشده است.";
-  return;
- }
-
- document.getElementById("loginPanel").style.display="none";
- document.getElementById("studentPanel").style.display="block";
- document.getElementById("welcome").textContent=
-  "خوش آمدی، "+username+" عزیز!";
-});
-
-document.getElementById("attendanceButton").addEventListener("click",()=>{
- const now=new Date();
- document.getElementById("attendanceMessage").textContent=
-  "حضور نمایشی شما ثبت شد: "+now.toLocaleDateString("fa-IR")+" ساعت "+
-  now.toLocaleTimeString("fa-IR");
- document.getElementById("attendanceButton").disabled=true;
- document.getElementById("attendanceButton").textContent="حضور ثبت شد ✓";
-});
-
-document.getElementById("logout").addEventListener("click",()=>{
- document.getElementById("studentPanel").style.display="none";
- document.getElementById("loginPanel").style.display="block";
- document.getElementById("attendanceButton").disabled=false;
- document.getElementById("attendanceButton").textContent="ثبت حضور من";
- document.getElementById("attendanceMessage").textContent="";
- document.getElementById("login").reset();
-});
-</script>
-</body>
-</html>
-<!-- GitHub write-access test: connection verified -->
+const firebaseConfig={apiKey:"AIzaSyDHZLtcQvNhrjAkFVTVNXgDS2SXFST5Pog",authDomain:"quran-calss-604db.firebaseapp.com",projectId:"quran-calss-604db",storageBucket:"quran-calss-604db.firebasestorage.app",messagingSenderId:"277211287446",appId:"1:277211287446:web:bcff0d66f65cedfb6157b7"};
+firebase.initializeApp(firebaseConfig);
+const auth=firebase.auth(),db=firebase.firestore(),storage=firebase.storage(),functions=firebase.app().functions("europe-west1");
+let selectedRole="student",currentUser=null,currentRole=null;
+const $=id=>document.getElementById(id);
+function msg(id,text,kind=""){ $(id).textContent=text;$(id).className="notice "+kind; }
+function emailFor(username){return username.trim().toLowerCase()+"@quran-calss-604db.firebaseapp.com";}
+function readableError(e){const c=e.code||"";if(c.includes("permission-denied"))return "اجازه دسترسی ندارید.";if(c.includes("already-exists"))return e.message||"این مورد قبلاً ثبت شده است.";if(c.includes("invalid-credential")||c.includes("user-not-found")||c.includes("wrong-password"))return "نام کاربری یا رمز عبور اشتباه است.";if(c.includes("network"))return "اتصال اینترنت را بررسی کنید.";return e.message||"خطایی رخ داد.";}
+document.querySelectorAll(".role").forEach(b=>b.addEventListener("click",()=>{selectedRole=b.dataset.role;document.querySelectorAll(".role").forEach(x=>x.classList.toggle("active",x===b));}));
+$("loginForm").addEventListener("submit",async e=>{e.preventDefault();msg("loginMessage","در حال ورود...");try{const username=$("username").value.trim().toLowerCase();const cred=await auth.signInWithEmailAndPassword(emailFor(username),$("password").value);const token=await cred.user.getIdTokenResult(true);const role=token.claims.role;if(role!==selectedRole){await auth.signOut();throw new Error("نقش انتخاب‌شده با این حساب مطابقت ندارد.");}const profile=await db.collection("users").doc(cred.user.uid).get();if(!profile.exists){await auth.signOut();throw new Error("پرونده کاربری پیدا نشد.");}currentUser=cred.user;currentRole=role;showPanel(profile.data());}catch(e){msg("loginMessage",readableError(e),"error");}});
+$("bootstrapForm").addEventListener("submit",async e=>{e.preventDefault();msg("bootMessage","در حال ساخت مدیر...");try{await functions.httpsCallable("bootstrapAdmin")({username:$("bootUser").value, password:$("bootPass").value,displayName:$("bootName").value,setupCode:$("bootCode").value});msg("bootMessage","مدیر اولیه ساخته شد. اکنون می‌توانید از فرم ورود استفاده کنید.","success");$("bootstrapForm").reset();}catch(e){msg("bootMessage",readableError(e),"error");}});
+function showPanel(profile){$("loginPanel").classList.add("hidden");$("appPanel").classList.remove("hidden");$("panelTitle").textContent={admin:"پنل مدیر 🛡️",teacher:"پنل مربی 👨‍🏫",student:"پنل دانش‌آموز 👨‍🎓"}[currentRole];$("welcome").textContent="خوش آمدی، "+(profile.displayName||profile.username);$("adminArea").classList.toggle("hidden",currentRole!=="admin");$("teacherArea").classList.toggle("hidden",currentRole!=="teacher"&&currentRole!=="admin");$("studentArea").classList.toggle("hidden",currentRole!=="student");$("uploadArea").classList.toggle("hidden",currentRole!=="teacher"&&currentRole!=="admin");loadShared();if(currentRole!=="student")loadAttendance();}
+$("logout").addEventListener("click",()=>auth.signOut().then(()=>location.reload()));
+$("createAccount").addEventListener("submit",async e=>{e.preventDefault();msg("createMessage","در حال ساخت حساب...");try{await functions.httpsCallable("createClassAccount")({displayName:$("newName").value,username:$("newUser").value,password:$("newPass").value,role:$("newRole").value});msg("createMessage","حساب با موفقیت ساخته شد.","success");$("createAccount").reset();}catch(e){msg("createMessage",readableError(e),"error");}});
+$("attendanceBtn").addEventListener("click",async()=>{msg("attendanceMessage","در حال ثبت حضور...");try{await functions.httpsCallable("recordAttendance")({});msg("attendanceMessage","حضور امروز با موفقیت ثبت شد.","success");$("attendanceBtn").disabled=true;}catch(e){msg("attendanceMessage",readableError(e),"error");}});
+$("assignmentForm").addEventListener("submit",async e=>{e.preventDefault();msg("assignmentMessage","در حال انتشار...");try{await db.collection("assignments").add({title:$("assignmentTitle").value.trim(),text:$("assignmentText").value.trim(),createdBy:currentUser.uid,createdAt:firebase.firestore.FieldValue.serverTimestamp()});msg("assignmentMessage","منتشر شد.","success");$("assignmentForm").reset();loadAssignments();}catch(e){msg("assignmentMessage",readableError(e),"error");}});
+async function loadAssignments(){const box=$("assignmentList");try{const snap=await db.collection("assignments").orderBy("createdAt","desc").limit(30).get();box.innerHTML="";if(snap.empty){box.textContent="هنوز موردی منتشر نشده است.";return;}snap.forEach(doc=>{const d=doc.data(),el=document.createElement("article");el.className="item";const h=document.createElement("h3");h.textContent=d.title||"بدون عنوان";const p=document.createElement("p");p.textContent=d.text||"";el.append(h,p);box.append(el);});}catch(e){box.textContent=readableError(e);}}
+async function loadMaterials(){const box=$("materialList");try{const snap=await db.collection("materials").orderBy("createdAt","desc").limit(40).get();box.innerHTML="";if(snap.empty){box.textContent="هنوز فایلی بارگذاری نشده است.";return;}snap.forEach(doc=>{const d=doc.data(),el=document.createElement("article");el.className="item";const h=document.createElement("h3");h.textContent=d.title||"فایل آموزشی";const a=document.createElement("a");a.href=d.url;a.target="_blank";a.rel="noopener";a.textContent="مشاهده / دریافت فایل";el.append(h,a);box.append(el);});}catch(e){box.textContent=readableError(e);}}
+function loadShared(){loadAssignments();loadMaterials();}
+$("uploadForm").addEventListener("submit",async e=>{e.preventDefault();const file=$("materialFile").files[0];if(!file)return;if(file.size>100*1024*1024){msg("uploadMessage","حجم فایل بیشتر از ۱۰۰ مگابایت است.","error");return;}if(!/^(application\/pdf|image\/|audio\/|video\/)/.test(file.type)){msg("uploadMessage","نوع فایل مجاز نیست.","error");return;}msg("uploadMessage","در حال بارگذاری...");try{const safe=file.name.replace(/[^\w.\-]/g,"_");const path="materials/"+Date.now()+"_"+safe;const ref=storage.ref(path);await ref.put(file,{contentType:file.type});const url=await ref.getDownloadURL();await db.collection("materials").add({title:$("fileTitle").value.trim(),fileName:file.name,path,url,createdBy:currentUser.uid,createdAt:firebase.firestore.FieldValue.serverTimestamp()});msg("uploadMessage","فایل با موفقیت بارگذاری شد.","success");$("uploadForm").reset();loadMaterials();}catch(e){msg("uploadMessage",readableError(e),"error");}});
+async function loadAttendance(){const box=$("attendanceList");try{const snap=await db.collection("attendance").orderBy("createdAt","desc").limit(100).get();box.innerHTML="";if(snap.empty){box.textContent="هنوز حضوری ثبت نشده است.";return;}for(const doc of snap.docs){const d=doc.data(),profile=await db.collection("users").doc(d.uid).get(),el=document.createElement("article");el.className="item";const p=document.createElement("p");p.textContent=(profile.exists?profile.data().displayName:"دانش‌آموز")+" — "+d.date+" — حاضر";el.append(p);box.append(el);}}catch(e){box.textContent=readableError(e);}}
+$("refreshAttendance").addEventListener("click",loadAttendance);
+auth.onAuthStateChanged(user=>{if(!user){currentUser=null;currentRole=null;}});
+</script></body></html>
